@@ -1,0 +1,63 @@
+.header {
+    width: 100%;
+}
+
+.leftSideBar {
+    width: 80%;
+}
+
+.rightSideBar {
+    position: absolute;
+    left: 80%;
+    width: 20%;
+}
+
+.float {
+    float: left;
+}
+
+.gifImage {
+    margin: 0.25%;
+    float: left;
+
+}
+.button {
+    margin: 0.25%;
+    width: 9.5%;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: yellowgreen;
+}
+
+.ratingSetting {
+    margin: 0.25%;
+    width: 23.5%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: yellowgreen;
+}
+
+.subReset {
+    margin: 0.25%;
+    width: 48.5%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: yellowgreen;
+}
+
+.hover:hover {
+    background-color: green;
+}
+
+.text {
+    font-size: 20px;
+}

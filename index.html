@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./assets/javascript/app.js"></script>
 
@@ -13,15 +14,23 @@
     <div class="header">
         <div id="buttonDiv"></div>
     </div>
-    <div class="leftSideBar">
+    <hr>
+    <div class="leftSideBar float">
         <div id="gifsDiv"></div>
     </div>
 
-    <div class="rightSideBar">
+    <div class="rightSideBar float">
+        <div>
+            <button class="ratingSetting hover">G</button>
+            <button class="ratingSetting hover">PG</button>
+            <button class="ratingSetting hover">PG-13</button>
+            <button class="ratingSetting hover">R</button>
+        </div>
         <form id="movie-form">
-            <label for="charName">Add a Cartoon Character</label><br>
-            <input type="text" id="charName"><br>
-            <input id="find-char" type="submit" value="Submit">
+            <label for="charName"><span class="text">Add a Cartoon Character</span></label><br>
+            <input type="text" class="text" id="charName" placeholder="Enter Character Name"><br>
+            <input class="subReset hover" id="find-char" type="submit" value="Submit">
+            <input class="subReset hover" id="resetArray" type="submit" value="Reset">
         </form>
     </div>
 </body>
