@@ -26,7 +26,9 @@ function initialize () {
         };
     }
 
-    favorites = JSON.parse(localStorage.getItem("favorites"));
+    if (localStorage.getItem("favorites") !== null) {
+        favorites = JSON.parse(localStorage.getItem("favorites"));
+    };
     
     displayGif ();
     displayFav ();
@@ -124,7 +126,7 @@ function addFav () {
 }
 
 function displayFav() {
-    if (favorites.length !== 0) {
+    if (localStorage.getItem("favorites") !== null) {
         $(".favImage").remove();
         favorites = JSON.parse(localStorage.getItem("favorites"));
         console.log ("fav display")
