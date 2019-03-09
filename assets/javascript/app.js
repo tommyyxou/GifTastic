@@ -15,19 +15,19 @@ let topicJSON = "";
 let responsePos = null;
 
 function initialize () {
-    console.log (localStorage)
-    if (localStorage.length > 1) {
-        words = JSON.parse(localStorage.getItem("topic"));
+     if (localStorage.getItem("topic") === null) {
         for (charId = 0; charId < words.length; charId++ ) {
             setupButton (words);
-        };
+        } 
     } else {
-
+        words = JSON.parse(localStorage.getItem("topic"));
         for (charId = 0; charId < words.length; charId++ ) {
             setupButton (words);
         };
     }
 
+    favorites = JSON.parse(localStorage.getItem("favorites"));
+    
     displayGif ();
     displayFav ();
     addButton ();
@@ -109,45 +109,45 @@ function addFav () {
     $(".fav").on("click", function() {
     console.log ("fav click")
     let i = event.currentTarget.id;
-    //console.log (webResponse.data[i]);
     
     let favGif = {  rating: webResponse.data[i].rating,
                     stillImgURL: webResponse.data[i].images.fixed_height_still.url,
                     animeImgURL: webResponse.data[i].images.fixed_height.url,
                  }
     favorites.push(favGif);
-    //console.log (favorites);
     favJSON = JSON.stringify(favorites);
     localStorage.setItem ("favorites", favJSON);
+    console.log (localStorage.getItem ("favorites"))
     displayFav();
     });
     
 }
 
 function displayFav() {
-    $(".favImage").remove();
-    favorites = JSON.parse(localStorage.getItem("favorites"));
-    console.log (favorites)
-    console.log ("fav display")
     if (favorites.length !== 0) {
-        for (let i = 0; i < favorites.length ; i++) {
-            let favString = "fav" + i
-            
-                $("#favDiv").append("<div id='" + favString + "' class='favImage'></div>");
-      
-                let gifRating = $("<h2>");
-                gifRating.text("Rating: " + favorites[i].rating);
+        $(".favImage").remove();
+        favorites = JSON.parse(localStorage.getItem("favorites"));
+        console.log ("fav display")
+        if (favorites.length !== 0) {
+            for (let i = 0; i < favorites.length ; i++) {
+                let favString = "fav" + i
+                
+                    $("#favDiv").append("<div id='" + favString + "' class='favImage'></div>");
+        
+                    let gifRating = $("<h2>");
+                    gifRating.text("Rating: " + favorites[i].rating);
 
-                let imgIdString = "img" + i;
+                    let imgIdString = "img" + i;
 
-                let gifImg = $("<img>");
-                gifImg.attr('id', imgIdString );
-                gifImg.attr('class', "gifImgFrame");
-                gifImg.attr('src', favorites[i].stillImgURL);
+                    let gifImg = $("<img>");
+                    gifImg.attr('id', imgIdString );
+                    gifImg.attr('class', "gifImgFrame");
+                    gifImg.attr('src', favorites[i].stillImgURL);
 
-                let appendfavId = "#" + favString;
-                $(appendfavId).append(gifRating);
-                $(appendfavId).append(gifImg);
+                    let appendfavId = "#" + favString;
+                    $(appendfavId).append(gifRating);
+                    $(appendfavId).append(gifImg);
+            }
         }
     }
 }
