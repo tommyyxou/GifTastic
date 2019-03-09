@@ -16,7 +16,10 @@
     </div>
     <hr>
     <div class="leftSideBar float">
-        <div id="gifsDiv"></div>
+        <div id="placeHolder">
+            <div id="gifsDiv"></div>
+        </div>
+        <div id="moreButtonDiv"></div>
     </div>
 
     <div class="rightSideBar float">
@@ -32,6 +35,11 @@
             <input class="subReset hover" id="find-char" type="submit" value="Submit">
             <input class="subReset hover" id="resetArray" type="submit" value="Reset">
         </form>
+        <hr>
+        <div id="favDiv" class="text"> Favorite Gifs
+            <BUtton id="favReset" class="subReset hover" onclick="favReset();">Favorite Reset</BUtton>
+        </div>
+
     </div>
 </body>
 </html>

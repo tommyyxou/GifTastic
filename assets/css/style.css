@@ -17,13 +17,14 @@
 }
 
 .gifImage {
-    margin: 0.25%;
+    margin: 5px;
     float: left;
 
 }
 .button {
-    margin: 0.25%;
-    width: 9.5%;
+    vertical-align: top;
+    margin: 5px;
+    width: 140px;
     height: 60px;
     border: none;
     border-radius: 5px;
@@ -33,8 +34,9 @@
 }
 
 .ratingSetting {
+    vertical-align: top;
     margin: 0.25%;
-    width: 23.5%;
+    width: 20%;
     height: 30px;
     border: none;
     border-radius: 5px;
@@ -44,8 +46,9 @@
 }
 
 .subReset {
+    vertical-align: top;
     margin: 0.25%;
-    width: 48.5%;
+    width: 47.5%;
     height: 30px;
     border: none;
     border-radius: 5px;
@@ -60,4 +63,28 @@
 
 .text {
     font-size: 20px;
+}
+
+.first {
+    clear: both;
+}
+
+#more {
+    width: 100%;
+    margin: auto;
+}
+#moreButtonDiv {
+    width: 100%;
+}
+
+.buttonDL {
+    vertical-align: top;
+    margin-top:10px;
+    width: 100%;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: yellowgreen;
 }
